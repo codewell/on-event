@@ -17,12 +17,27 @@ npm install @codewell/on-event
 ```JavaScript
 import onEvent from '@codewell/on-event';
 
-const doSomething = (event, text) => {
-  // Handle event and other params...
+const handleClickEvent = (event) => {
+  // Handle the click event...
+};
+
+const SomeComponent = (props) => (
+  <button onClick={onEvent(handleClickEvent)}>
+);
+
+```
+
+```JavaScript
+import onEvent from '@codewell/on-event';
+
+const handleInputChange = (event, label) => {
+  const inputValue = event.target.value;
+  return `${label}: ${inputValue}`;
+  // "first name: some input value..."
 }
 
 const SomeComponent = (props) => (
-  <button onClick={onEvent(doSomething, 'hello world')}>
+  <input onChange={onEvent(handleInputChange, 'first name')}>
 )
 
 ```
