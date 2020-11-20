@@ -22,7 +22,7 @@ const handleClickEvent = (event) => {
 };
 
 const SomeComponent = (props) => (
-  <button onClick={onEvent(handleClickEvent)}>
+  <button onClick={onEvent(handleClickEvent)}/>
 );
 
 ```
@@ -37,7 +37,7 @@ const handleInputChange = (event, label) => {
 }
 
 const SomeComponent = (props) => (
-  <input onChange={onEvent(handleInputChange, 'first name')}>
+  <input onChange={onEvent(handleInputChange, 'first name')}/>
 )
 
 ```
