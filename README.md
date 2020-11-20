@@ -1,5 +1,11 @@
 # @codewell/on-event
 
+Wrapper function that passes JavaScript event as first parameter to a function when the event is triggered.
+
+```JavaScript
+const onEvent = (func, ...args) => (event) => func(event, ...args);
+```
+
 ## Installation
 
 ```
@@ -9,11 +15,14 @@ npm install @codewell/on-event
 ## Basic Usage
 
 ```JavaScript
-import /* FIXME: <nameOfModule> */ from '@codewell/on-event';
-//FIXME: Write examples here
+import onEvent from '@codewell/on-event';
+
+const doSomething = (event, text) => {
+  // Handle event and other params...
+}
+
+const SomeComponent = (props) => (
+  <button onClick={onEvent(doSomething, 'hello world')}>
+)
+
 ```
-
-## Contribution
-
-Please help by submitting issues and pull requests here on github
-Read more on [codewell's webpage](https://codewell.github.io/contribution)
