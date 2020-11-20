@@ -1,0 +1,27 @@
+{
+  "name": "@codewell/on-event",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "npm run build:dev && npm run build:prod",
+    "build:prod": "NODE_ENV=production rollup --config",
+    "build:dev": "NODE_ENV=development rollup --config",
+    "build:local": "npm run build && npm pack",
+    "format": "prettier \"**/*.{js,jsx,css,md}\" --write"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/runtime": "^7.12.5",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@rollup/plugin-replace": "^2.3.4",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.0",
+    "rollup": "^2.33.3",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
+  }
+}
